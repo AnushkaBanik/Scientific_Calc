@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <!-- Use the Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4 text-gray-900">
+    <div class="calculator bg-white p-6 rounded-3xl shadow-xl w-full max-w-md">
+        <!-- Display Screen -->
+        <div class="bg-gray-200 p-5 mb-5 rounded-2xl text-right overflow-hidden shadow-inner">
+            <div id="history" class="text-gray-500 text-sm h-6"></div>
+            <div id="display" class="text-gray-900 text-3xl font-semibold h-10 truncate">0</div>
+        </div>
+
+        <!-- Calculator Buttons Grid -->
+        <div class="calculator-grid grid gap-3">
+            <!-- Row 1 -->
+            <button class="button bg-gray-300 hover:bg-gray-400 p-4 rounded-xl" onclick="allClear()">AC</button>
+             <!-- Inside .calculator-grid, put this in Row 1-->
+            <button id="modeBtn" class="button bg-green-500 hover:bg-green-600 text-white p-4 rounded-xl" onclick="toggleMode()">DEG</button>
+            <button class="button bg-gray-300 hover:bg-gray-400 text-sm p-4 rounded-xl" onclick="appendToDisplay('sqrt')">√</button>
+
+            <button class="button bg-gray-300 hover:bg-gray-400 p-4 rounded-xl" onclick="appendToDisplay('factorial')">x!</button>
+            <button class="button bg-gray-300 hover:bg-gray-400 p-4 rounded-xl" onclick="appendToDisplay('(')">(</button>
+            <button class="button bg-gray-300 hover:bg-gray-400 p-4 rounded-xl" onclick="appendToDisplay(')')">)</button>
+
+            <!-- Row 2 -->
+            
+            <button class="button bg-gray-300 hover:bg-gray-400 p-4 rounded-xl" onclick="appendToDisplay('sin(')">sin</button>
+            <button class="button bg-gray-300 hover:bg-gray-400 p-4 rounded-xl" onclick="appendToDisplay('cos(')">cos</button>
+            <button class="button bg-gray-300 hover:bg-gray-400 p-4 rounded-xl" onclick="appendToDisplay('tan(')">tan</button>
+            <button class="button bg-gray-300 hover:bg-gray-400 p-4 rounded-xl" onclick="appendToDisplay('log(')">log</button>
+            <button class="button bg-gray-300 hover:bg-gray-400 p-4 rounded-xl" onclick="appendToDisplay('ln(')">ln</button>
+            <button class="button bg-gray-300 hover:bg-gray-400 text-sm p-4 rounded-xl" onclick="appendToDisplay('x_pow_y')">x<sup>y</sup></button>
+
+            <!-- Row 3 -->
+            <button class="button bg-gray-300 hover:bg-gray-400 text-sm p-4 rounded-xl" onclick="appendToDisplay('pi')">π</button>
+            <button class="button bg-gray-200 hover:bg-gray-300 font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('7')">7</button>
+            <button class="button bg-gray-200 hover:bg-gray-300 font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('8')">8</button>
+            <button class="button bg-gray-200 hover:bg-gray-300 font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('9')">9</button>
+            <button class="button bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('percntg')">%</button>
+            <button class="button bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('/')">÷</button>
+
+            <!-- Row 4 -->
+
+            <button class="button bg-gray-200 hover:bg-gray-300 font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('.')">.</button> 
+            <button class="button bg-gray-200 hover:bg-gray-300 font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('4')">4</button>
+            <button class="button bg-gray-200 hover:bg-gray-300 font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('5')">5</button>
+            <button class="button bg-gray-200 hover:bg-gray-300 font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('6')">6</button>        
+            <button class="button bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('-')">-</button>
+            <button class="button bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('*')">×</button>
+
+            <!-- Row 5 -->
+
+            <button class="button bg-gray-200 hover:bg-gray-300 font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('0')">0</button>
+            <button class="button bg-gray-200 hover:bg-gray-300 font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('1')">1</button>
+            <button class="button bg-gray-200 hover:bg-gray-300 font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('2')">2</button>
+            <button class="button bg-gray-200 hover:bg-gray-300 font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('3')">3</button>
+            <button class="button bg-blue-700 hover:bg-blue-800 text-white font-bold text-xl p-4 rounded-xl" onclick="calculate()">=</button>
+            <button class="button bg-blue-700 hover:bg-blue-800 text-white font-bold text-xl p-4 rounded-xl" onclick="appendToDisplay('+')">+</button>
+
+            
+           
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
